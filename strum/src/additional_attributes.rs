@@ -18,6 +18,8 @@
 //!   - `title_case`
 //!   - `mixed_case`
 //!   - `Train-Case`
+//!   - `dot.case`
+//!   - `SHOUTY.DOT.CASE`
 //!
 //!   ```rust
 //!   use strum_macros;

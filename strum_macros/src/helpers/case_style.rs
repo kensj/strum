@@ -21,6 +21,8 @@ pub enum CaseStyle {
     ScreamingKebabCase,
     PascalCase,
     TrainCase,
+    DotCase,
+    ShoutyDotCase,
 }
 
 const VALID_CASE_STYLES: &[&str] = &[
@@ -35,6 +37,8 @@ const VALID_CASE_STYLES: &[&str] = &[
     "title_case",
     "mixed_case",
     "Train-Case",
+    "dot.case",
+    "SHOUTY.DOT.CASE",
 ];
 
 impl Parse for CaseStyle {
@@ -72,6 +76,8 @@ impl FromStr for CaseStyle {
             "lowercase" => CaseStyle::LowerCase,
             "UPPERCASE" => CaseStyle::UpperCase,
             "Train-Case" => CaseStyle::TrainCase,
+            "dot.case" => CaseStyle::DotCase,
+            "SHOUTY.DOT.CASE" => CaseStyle::ShoutyDotCase,
             _ => return Err(()),
         })
     }
@@ -106,6 +112,8 @@ impl CaseStyleHelpers for Ident {
                     pascal.extend(it);
                     pascal
                 }
+                CaseStyle::DotCase => ident_string.to_dot_case(),
+                CaseStyle::ShoutyDotCase => ident_string.to_shouty_dot_case(),
             }
         } else {
             ident_string
