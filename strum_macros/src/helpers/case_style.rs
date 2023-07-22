@@ -1,6 +1,4 @@
-use heck::{
-    ToKebabCase, ToLowerCamelCase, ToShoutySnakeCase, ToSnakeCase, ToTitleCase, ToUpperCamelCase, ToTrainCase,
-};
+use heck::{ToKebabCase, ToLowerCamelCase, ToShoutySnakeCase, ToSnakeCase, ToTitleCase, ToUpperCamelCase, ToTrainCase, ToDotCase, ToShoutyDotCase};
 use std::str::FromStr;
 use syn::{
     parse::{Parse, ParseStream},
